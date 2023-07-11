@@ -44,14 +44,23 @@ function ViewSingleTurf() {
               </p>
               <h3 style={priceStyle}>{details.price} ₹</h3>
 
+              
+
+              <div style={buttonContainer}>
               <Link
                 style={buttonStyle}
                 to="/turfbooking"
-                state={{ id: location.state.id }}
+                
               >
                 Book Now
               </Link>
-            </div>
+
+                <Link to='/complaint' state={{ id: location.state.id }} style={reportButton}>
+                  Report Turf
+                </Link>
+                
+              </div>
+            </div>  
           </div>
         </div>
       </div>
@@ -118,5 +127,18 @@ const buttonStyle = {
   borderRadius: "4px",
   cursor: "pointer",
 };
+
+const reportButton = {
+  backgroundColor:"#dc2626",
+  color : "white",
+  border: "none",
+  borderRadius: "4px",
+  padding : "10px 20px",
+  marginLeft : "60px"
+
+};
+const buttonContainer ={
+ paddingTop: "20px"
+}
 
 export default ViewSingleTurf;

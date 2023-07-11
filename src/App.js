@@ -22,6 +22,7 @@ import Payment from "./component/Payment";
 import Orders from "./component/Orders";
 import ViewSingleTurf from "./component/ViewSingleTurf";
 import TurfBooking from "./component/TurfBooking";
+import ComplaintPage from "./component/ComplaintPage";
 
 function App() {
   const { isAuthenticated } = useContext(AuthenticationContext);
@@ -45,6 +46,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/ordernow" element={<Ordernow />} />
             <Route path="/feedback" element={<Feedback />} />
+            <Route path="/complaint" element={<ComplaintPage />} />
           </Routes>
         ) : (
           <Routes>
