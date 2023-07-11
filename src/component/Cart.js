@@ -68,7 +68,7 @@ function Cart() {
               })}
               <br></br>
             </div>
-            <div style={orderSummaryStyle}>
+            {items.length > 0 ?  <div style={orderSummaryStyle}>
               <h2 style={summaryTitleStyle}>Order Summary</h2>
               <div style={summaryContentStyle}>
                 <p style={summaryItemStyle}>
@@ -82,7 +82,11 @@ function Cart() {
               <button style={proceedButtonStyle} onClick={() => payment()}>
                 Proceed
               </button>
-            </div>
+            </div>: 
+               <div>
+                <h1>Cart is Empty</h1>
+                 </div>
+            }
           </div>
         </div>
       </div>
