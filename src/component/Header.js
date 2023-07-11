@@ -78,6 +78,9 @@ function Header() {
                               <Link to="/turf">Turf</Link>
                             </li>
                             <li>
+                              <Link to="/tournament">Tournaments</Link>
+                            </li>
+                            <li>
                               <Link to="/booking">Booking</Link>
                             </li>
                             <li>
