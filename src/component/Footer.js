@@ -28,12 +28,12 @@ function Footer(){
                                 <div className="footer-widget">
                                     <h3>Menu</h3>
                                     <ul className="footer-menu">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="team.html">Our Team</a></li>
-                                        <li><a href="news.html">Latest News</a></li>
-                                        <li><a href="matche.html">Recent Matchs</a></li>
-                                        <li><a href="blog.html">Our Blog</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#">Latest News</a></li>
+                                        <li><a href="#">Recent Matchs</a></li>
+                                        <li><a href="#">Our Blog</a></li>
+                                        <li><a href="#">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -53,8 +53,8 @@ function Footer(){
                         </div>
                         <div className="col-md-3">
                             <div className="full">
-                                <div className="contact-footer">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120615.72236587871!2d73.07890527988283!3d19.140910987164396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1527759905404" width="600" height="350" frameborder="0" style={{ border:0 }}  ></iframe>
+                                <div className="contact-footer" height="300" width="300">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120615.72236587871!2d73.07890527988283!3d19.140910987164396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1527759905404" width="400" height="350" frameborder="0" style={{ border:0 }}  ></iframe>
                                 </div>
                             </div>
                         </div>
@@ -62,9 +62,11 @@ function Footer(){
                 </div>
                 <div className="footer-bottom">
                     <div className="container">
-                        <p>Copyright © 2018 Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+                        <p>Copyright © 2023</p>
                     </div>
                 </div>
+
+            
             </footer>
         </>
     )
