@@ -23,6 +23,7 @@ import Orders from "./component/Orders";
 import ViewSingleTurf from "./component/ViewSingleTurf";
 import TurfBooking from "./component/TurfBooking";
 import ComplaintPage from "./component/ComplaintPage";
+import Tournament from "./component/Tournament";
 
 function App() {
   const { isAuthenticated } = useContext(AuthenticationContext);
@@ -47,6 +48,7 @@ function App() {
             <Route path="/ordernow" element={<Ordernow />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/complaint" element={<ComplaintPage />} />
+            <Route path="/tournament" element={<Tournament/>}/>
           </Routes>
         ) : (
           <Routes>
