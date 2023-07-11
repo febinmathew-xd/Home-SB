@@ -1,12 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import Header from "./Header";
+import { Post } from "./service/Api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Feedback(){
+
+
+    const [title, setTitle] = useState('');
+    const [feedback, setFeedback] = useState('');
+    
+    const navigate = useNavigate();
+
+
+    /* SETTING TITLE VALUE */
+
+    function handleTitlechange(event) {
+
+        setTitle(event.target.value);
+
+    };
+
+    /* SETTING FEEDBACK */
+
+    function handleFeedbackChange(event) {
+        setFeedback(event.target.value);
+        console.log(feedback);
+    }
+
+    /* SUBBMIT FEEDBACK */
+
+    function subbmitFeedback(event){
+        event.preventDefault();
+
+        const userdata = JSON.parse(localStorage.getItem("userdata"));
+        
+
+        let param = {
+            userid:userdata.loginid,
+            title: title,
+            feedback: feedback,
+            tablename:"feedback",
+        };
+
+        Post('save', param).then((data)=> {
+           toast.success('Feedback sent sucessfully');
+           setTimeout(() => {
+            navigate("/");
+          }, 2000);
+        });
+
+
+
+
+    }
+
+
     return(
         <>
         <Header/>
+        <ToastContainer/>
 
 
     
@@ -24,19 +79,19 @@ function Feedback(){
             
                     <div className="row g-6">
                     <div className="col-sm-6">
-                                <input type="text" className="form-control bg-light border-0 px-4" placeholder="Title" style={{height: '55px',position:"absolute",left:"500px"}} />
+                                <input type="text" onChange={handleTitlechange} className="form-control bg-light border-0 px-4" placeholder="Title" style={{height: '55px',position:"absolute",left:"500px"}} />
                             </div>
                             <br></br><br></br>
                         <br></br>   
                             <div className="col-sm-6">
-                                <input type="textArea" className="form-control bg-light border-0 px-4" placeholder="Description" style={{height: '55px',position:"absolute",left:"500px"}} />
+                                <input type="textArea" onChange={handleFeedbackChange} className="form-control bg-light border-0 px-4" placeholder="Description" style={{height: '55px',position:"absolute",left:"500px"}} />
                             </div>
                         <br></br><br></br>
                         <br></br>   
                         
                         
                         <div className="col-sm-8">
-                   <input type="submit" className="btn btn-primary border-inner w-100 py-3"  value='add' style={{height: '55px',position:"absolute",left:"500px"}}/>
+                   <input type="submit" onClick={subbmitFeedback} className="btn btn-primary border-inner w-100 py-3"  value='add' style={{height: '55px',position:"absolute",left:"500px"}}/>
                            
                         </div>
                         <br></br>   <br></br>
