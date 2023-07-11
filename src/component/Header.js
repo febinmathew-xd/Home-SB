@@ -8,7 +8,7 @@ function Header() {
   return (
     <>
       <header>
-        <div className="container">
+        <div className="container ">
           <div className="header-top">
             <div className="row">
               <div className="col-md-6">
@@ -119,6 +119,7 @@ function Header() {
             </div>
           </div>
         </div>
+        <hr/>
       </header>
     </>
   );
