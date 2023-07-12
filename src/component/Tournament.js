@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 import { Post } from './service/Api';
 
@@ -39,8 +40,11 @@ function Tournament() {
                    <h5>Time: {tournament.time} </h5>
                    <h5>Host: {tournament.username}</h5>
                    <h6>Location: {tournament.address}</h6>
-                   <button style={bookButton}>
+                   <button  style={bookButton}>
+                   <Link state={{id:tournament.tournamentid}} to='/booktournament' style={linkStyle}>
                     Book Ticket
+                   </Link>
+                   
                    </button>
                    
                 </div>
@@ -101,13 +105,18 @@ const bookButton = {
     backgroundColor: '#4e878c',
     color : 'white',
     border: "none",
-    padding: "6px 60px",
+  /*   padding: "6px 60px", */
     borderRadius: "25px",
     fontWeight: '600',
     marginBottom : '10px'
 };
 const title = {
     fontWeight:"600"
+};
+
+const linkStyle = {
+   color: 'white',
+   padding: "20px 60px",
 }
 
 
