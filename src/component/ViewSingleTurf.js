@@ -50,7 +50,7 @@ function ViewSingleTurf() {
               <Link
                 style={buttonStyle}
                 to="/turfbooking"
-                
+                state={{ id: location.state.id }}
               >
                 Book Now
               </Link>

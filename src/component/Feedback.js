@@ -72,7 +72,7 @@ function Feedback(){
    <br/>
 
      
-       <center> <h4 class="mb-4">Add your Feedback</h4></center>
+       <center> <h4  class="mb-4">Add your <span style={feedbackText}>Feedback</span> </h4></center>
         <div className="row justify-content-center">
         <center>
             <div className="col-lg-6">
@@ -108,5 +108,9 @@ function Feedback(){
 
     </>
 )
+}
+
+const feedbackText = {
+    color: "red"
 }
 export default Feedback;
