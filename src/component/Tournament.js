@@ -32,16 +32,16 @@ function Tournament() {
                {tournaments?.map((tournament,index)=> {
                   return(
                 <div key={index} style={card}>
-                   <h4 style={title}>{tournament.name}</h4>
+                   <h4 style={title}>{tournament?.name}</h4>
                    <div style={dateContainer}>
-                   <h5>From: {tournament.datefrom}</h5>
-                   <h5>To: {tournament.dateto}</h5>
+                   <h5>From: {tournament?.datefrom}</h5>
+                   <h5>To: {tournament?.dateto}</h5>
                    </div>
-                   <h5>Time: {tournament.time} </h5>
-                   <h5>Host: {tournament.username}</h5>
-                   <h6>Location: {tournament.address}</h6>
+                   <h5>Time: {tournament?.time} </h5>
+                   <h5>Host: {tournament?.username}</h5>
+                   <h6>Location: {tournament?.address}</h6>
                    <button  style={bookButton}>
-                   <Link state={{id:tournament.tournamentid}} to='/booktournament' style={linkStyle}>
+                   <Link state={{id:tournament?.tournamentid}} to='/booktournament' style={linkStyle}>
                     Book Ticket
                    </Link>
                    

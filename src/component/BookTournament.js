@@ -14,6 +14,7 @@ function BookTournament() {
     const [cvv, setCvv] = useState();
     const [expiry, setExpiry] = useState();
     const [tournament, setTournament] = useState();
+    const [availableTickets, setAvailableTickets] = useState();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -27,10 +28,12 @@ function BookTournament() {
 
     function decrement () {
           setCount(count-1);
+          setAvailableTickets(availableTickets+1);
     };
 
     function increment() {
           setCount(count+1);
+          setAvailableTickets(availableTickets-1);
           
     };
 
@@ -75,6 +78,7 @@ function BookTournament() {
         Post('gettournamentbyid',{id:tournamentid}).then((data) => {
             setTournament(data);
             setPrice(data.ticketprice);
+            setAvailableTickets(data.ticketsavailable);
             console.log("tour", data);
             
         });
@@ -114,11 +118,11 @@ function BookTournament() {
 
                   <div>
                     <div>
-                        <h5>Tickets:</h5>
+                        <h5>Tickets available: <span style={spanStyle}>{availableTickets - 1}</span> </h5>
                         <div>
                             <button onClick={decrement} disabled={count<=1} style={incrementbtn}>-</button>
                             <input style={inputField} type='text' value={count} />
-                            <button onClick={increment}  style={incrementbtn}>+</button>
+                            <button onClick={increment} disabled={availableTickets<=1}  style={incrementbtn}>+</button>
                         </div>
                     </div>
                   </div>
@@ -294,6 +298,11 @@ const acHeader = {
     margin: "10px 30px",
     borderRadius: "15px",
    /*  marginBottom: "10px" */
+};
+
+const spanStyle = {
+    color:"green",
+    fontWeight: "600"
 }
 
 export default BookTournament
