@@ -25,6 +25,7 @@ import TurfBooking from "./component/TurfBooking";
 import ComplaintPage from "./component/ComplaintPage";
 import Tournament from "./component/Tournament";
 import BookTournament from "./component/BookTournament";
+import News from "./component/News";
 
 function App() {
   const { isAuthenticated } = useContext(AuthenticationContext);
@@ -51,6 +52,7 @@ function App() {
             <Route path="/complaint" element={<ComplaintPage />} />
             <Route path="/tournament" element={<Tournament/>}/>
             <Route path="booktournament" element={<BookTournament/>} />
+            <Route path="news" element={<News/>} />
           </Routes>
         ) : (
           <Routes>

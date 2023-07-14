@@ -58,6 +58,16 @@ function BookTournament() {
             tablename:"ticketbooking"
         };
 
+        let param2 = {
+            ticketsavailable: availableTickets-1,
+            id:tournamentid,
+            tablename: "tournaments"
+        };
+
+
+
+        Post('update', param2);
+
         Post('save', param).then((data)=> {
             toast.success("Booking Successful");
             setTimeout(() => {
@@ -65,8 +75,12 @@ function BookTournament() {
             }, 1000);
         });
 
+        
+
 
     };
+
+    console.log("available tickets:",availableTickets)
 
 
 
@@ -116,6 +130,10 @@ function BookTournament() {
                   <h5>Host: {tournament?.username}</h5>
                   <h6>Location: {tournament?.address}</h6>
 
+
+                  <hr/>
+                 {availableTickets >0 && 
+                 <>
                   <div>
                     <div>
                         <h5>Tickets available: <span style={spanStyle}>{availableTickets - 1}</span> </h5>
@@ -126,10 +144,7 @@ function BookTournament() {
                         </div>
                     </div>
                   </div>
-
-                  <hr/>
-
-                  <div style={amount}>
+                 <div style={amount}>
                     <h4>Total Amount to be Paid</h4>
                     <h4>Rs {price * count}/-</h4>
                     
@@ -141,9 +156,20 @@ function BookTournament() {
                     </button>
                   </div>
                  
+                 </>}
+                {availableTickets <1 && 
+                 <div>
+                 <h5 style={{color:"#ef4444"}}>No Tickets Avialable</h5>
+                  </div>
+                }
+                
+                  
+                 
 
                 </div>
+                  
 
+                  {availableTickets >0 && 
                 <div className='account-details' style={accountContainer}>
 
                     <h4 style={acHeader}>Card Details</h4>
@@ -178,6 +204,8 @@ function BookTournament() {
                     <br/>
 
                 </div>
+
+}
                
                 
                 
