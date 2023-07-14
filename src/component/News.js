@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import { Post, fileurl } from './service/Api';
 
+
 function News() {
 
   const [news, setNews] = useState([]);
@@ -35,7 +36,7 @@ function News() {
                       
 
                     
-              <div style={newsContainer}>
+              <div key={index} style={newsContainer}>
               <img src={fileurl+data.image} style={{borderRadius:"15px", padding:"8px 1px"}} height={90} width={90} />
               <div>
               <h5 style={{fontSize:"14px", fontWeight:"600"}}>{data.title}</h5>
