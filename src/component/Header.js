@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-import { useContext } from "react";
+import react, { useContext } from "react";
 import { AuthenticationContext } from "./AuthenticationContext";
 
 function Header() {
@@ -92,6 +92,9 @@ function Header() {
 
                             <li>
                               <Link to="/feedback">Feedback</Link>
+                            </li>
+                            <li>
+                              <Link to="/news">News</Link>
                             </li>
                           </ul>
                         </div>
