@@ -18,18 +18,11 @@ function Turf() {
 
       <div className="team-holder theme-padding">
         <div className="container">
-          <div className="main-heading-holder">
+          <div className="main-heading-holder" style={{paddingTop:'0px'}}>
             <div className="main-heading sytle-2">
-              <h2>About Your Turf</h2>
-              <p>
-                There is no limitation to play! So why limit the games played?
-                Welcoming you to the Multi-Sport Turf credited for being the 1st
-                Cricket and Lawn Tennis Turf in Kottayam. This turf gives you
-                the freedom of choosing the space you need for your game.
-                Whichever outdoor games interest you can be played with quality
-                enjoyment here. Bring out your groups and try different games in
-                our Multi-Sport Turf.
-              </p>
+              
+              <h2 style={{fontSize:'20px'}}>Turfs Near You</h2>
+             
             </div>
           </div>
           <div id="team-slider">
@@ -37,8 +30,8 @@ function Turf() {
               {turfs.map((data) => {
                 return (
                   <>
-                    <div className="col-md-3">
-                      <div className="team-column style-2">
+                    <div className="col-md-3" style={{borderRadius:'10px'}}>
+                      <div className="team-column style-2 " style={{borderRadius:'10px', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'}}>
                         <img
                           src={fileurl + data.file}
                           alt=""

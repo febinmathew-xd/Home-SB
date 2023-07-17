@@ -91,7 +91,7 @@ function Feedback(){
                         
                         
                         <div className="col-sm-8">
-                   <input type="submit" onClick={subbmitFeedback} className="btn btn-primary border-inner w-100 py-3"  value='add' style={{height: '55px',position:"absolute",left:"500px"}}/>
+                   <input type="submit" onClick={subbmitFeedback} className=""  value='Sent' style={{position:"absolute",left:"500px", padding:'5px 30px', color:'whitesmoke', backgroundColor:'#ef4444', border:'none', outline:'none', borderRadius:'5px', fontWeight:'500',marginTop:'10px'}}/>
                            
                         </div>
                         <br></br>   <br></br>

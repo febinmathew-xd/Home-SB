@@ -37,14 +37,14 @@ function Cart() {
           <div className="main-heading-holder">
             <div className="main-heading sytle-2"></div>
           </div>
-          <div id="team-slider">
+          <div id="team-slider" >
             <div className="container">
               {items.map((value, index) => {
                 sum += value.price;
                 itemcount = index + 1;
                 return (
-                  <div className="col-md-3">
-                    <div className="team-column style-2">
+                  <div className="col-md-3" >
+                    <div className="team-column style-2" style={{borderRadius:'10px', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'}}>
                       <img
                         src={fileurl + value.file}
                         alt=""
