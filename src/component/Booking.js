@@ -18,14 +18,14 @@ function Booking() {
 
     Post('getTournamentBookingsforUser', {id:userdata.id}).then((data)=>{
       setTicketBookings(data);
-      console.log("t",data);
+      
   })
 
   }, []);
   return (
     <>
-      <div className="container-fluid pt-4 px-4">
         <Header />
+      <div className="container-fluid pt-4 px-4">
         <div className="content">
           <div className="container-fluid pt-4 px-4">
             <div className="row g-10">
@@ -33,7 +33,7 @@ function Booking() {
                 <div className="bg-light rounded h-100 p-4">
                   <div className="row">
                     <div className="col-10">
-                      <h4 className="mb-4" style={{marginLeft:"50px", fontWeight:"700"}}>Your Booking</h4>
+                      <h4 className="mb-4 " style={{marginLeft:"50px",marginTop:"50px",marginBottom:"20px", fontWeight:"700"}}>Your Booking</h4>
                     </div>
                     <div style={{marginLeft:"40px", marginTop: "20px", marginBottom:"20px"}}>
                       <button onClick={()=>setIsTurf(true)} style={{...buttonStyle, backgroundColor:isturf&&'#ef233c', color:isturf&&"white"}}>

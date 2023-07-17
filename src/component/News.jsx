@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import Header from './Header';
-import { Post, fileurl } from './service/Api';
+import React, {useEffect} from 'react';
+import { fileurl } from './service/Api';
 
-function News() {
+function News({news}) {
 
-  const [news, setNews] = useState([]);
-  
-  useEffect(()=> {
-      
-    
-    Post("getall", {tablename:'news'}).then((data)=> {
-      setNews(data);
-    })
+   
 
-
-
-  }, []);
 
   return (
     <>
-    <Header/>
-    
     <div className="team-holder theme-padding">
         <div className="container">
-              <h3>Updates</h3>
+              
           
             <div className="">
               <div style={subContainer}>
@@ -35,11 +22,11 @@ function News() {
                       
 
                     
-              <div style={newsContainer}>
+              <div key={index} style={newsContainer}>
               <img src={fileurl+data.image} style={{borderRadius:"15px", padding:"8px 1px"}} height={90} width={90} />
               <div>
               <h5 style={{fontSize:"14px", fontWeight:"600"}}>{data.title}</h5>
-                <p style={{fontSize:"14px"}}>{data.content}</p>
+                <h6 style={{fontSize:"14px", fontWeight:'300'}}>{data.content}</h6>
                 
               </div>
                
@@ -51,17 +38,6 @@ function News() {
                 }
              
 
-
-             
-
-             
-               
-
-        
-
-             
-                
-   
 
               </div>
             </div>
