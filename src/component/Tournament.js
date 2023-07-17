@@ -25,7 +25,7 @@ function Tournament() {
         <div className="container">
           <div className="main-heading-holder">
             <div className="main-heading sytle-2">
-              <h2>Tournaments</h2>
+              <h2 style={{fontSize:'25px'}}>Tournaments</h2>
               <div style={subContainer}>
 
 

@@ -25,7 +25,7 @@ function Orders() {
                 <div className="bg-light rounded h-100 p-4">
                   <div className="row">
                     <div className="col-10">
-                      <h2 className="mb-4">Your Orders</h2>
+                      <h2 className="mb-4"style={{fontSize:'15px', marginLeft:'30px', backgroundColor:'#ef4444', width:'120px', color:'white', borderRadius:'8px', textAlign:'center', padding:'8px 1px'}}>Your Orders</h2>
                     </div>
                   </div>
                   <table className="table">
