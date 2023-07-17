@@ -31,20 +31,20 @@ function Messages({complaints}) {
                 </div>
                 <div style={{marginBottom:'10px'}} >
                 <h5 style={{marginLeft:'15px', opacity:"0.8", color:'red'}}>Reply <span style={{color:'black'}}>:</span> </h5>
-                <div style={replyContainer}>
+                
 
                     {
-                        complaint?.reply ==null ? <h6 style={{fontSize:'13px', opacity:'0.4'}}>Waiting for Reply....(pending..)</h6> : <>
-                            
+                        complaint?.reply ==null ? <div style={pendingContainer}>  <h6 style={{fontSize:'13px', opacity:'0.4'}}>Waiting for Reply....(pending..)</h6> </div> : <>
+                   <div style={replyContainer}>         
                 <h6 style={{fontSize:'13px', fontWeight:'500', opacity:'0.7'}}>{complaint.replytitle}</h6>
                   <h6 style={{fontSize:'12px', opacity:'0.7', fontWeight:'400'}}>{complaint.reply}</h6>
-
+                  </div>
                          </> 
 
                 
                   
                     }
-                </div>
+                
                   
                 </div>
                 
@@ -131,6 +131,13 @@ const titleContainer =  {
     height:'44px',
     alignItems:'center',
     gap:'10px'
-}
+};
+
+const pendingContainer = {
+    backgroundColor:'#f1f5f9',
+    padding: '5px 15px',
+    borderRadius:'10px'
+
+};
 
 export default Messages
