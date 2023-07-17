@@ -38,8 +38,8 @@ function ComplaintPage() {
     Post('save', param).then((data)=> {
         toast.success('Feedback sent sucessfully');
            setTimeout(() => {
-            navigate("/");
-          }, 2000)
+            navigate("/notifications");
+          }, 1000)
     })
 
 

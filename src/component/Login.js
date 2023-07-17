@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthenticationContext } from "./AuthenticationContext";
 import { ToastContainer } from "react-toastify";
+import Header from './Header';
 
 function Login() {
   const [email, setEmail] = useState();
@@ -12,76 +13,94 @@ function Login() {
     <>
       <link rel="stylesheet" href="css/custom.css" disabled />
       <link rel="stylesheet" href="css/bootstrap.min.css" disabled />
-
       <ToastContainer />
-      <div className="content">
-        <div
-          className="row"
-          style={{ position: "absolute", top: "100px", left: "500px" }}
-        >
-          <div className="col-md-6">
-            <h1>LOGIN</h1>
-            <br />
-            <div className="form-floating mb-3">
-              <input
-                type="name"
-                className="form-control"
-                id="floatingInput"
-                placeholder="Username"
-                onChange={(e) => {
+      <Header/>
+
+
+      <main className="container" style={mainContainer}>
+       <div className="subcontainer" style={subContainer}>
+
+        <h3 style={{fontWeight:"bold", letterSpacing: '10px', color:"#475569"}}>LOGIN</h3>
+        <input style={inputStyle}  type="text"  placeholder="Username" onChange={(e) => {
                   setEmail(e.target.value);
-                }}
-                style={{ width: "500%" }}
-              />
-              {/*<label for="floatingInput">Username</label>*/}
-            </div>
-
-            <div className="form-floating mb-3">
-              <input
-                onChange={(e) => {
+                }} />
+        <input style={inputStyle} type="password" placeholder="Password"  onChange={(e) => {
                   setPassword(e.target.value);
-                }}
-                type="password"
-                className="form-control"
-                id="floatingInput"
-                placeholder="Password"
-                style={{ width: "500%", marginTop: "20px" }}
-              />
-              {/*<label for="floatingInput">Password</label>*/}
-            </div>
-
-            <button
-              type="button"
-              className="btn btn-danger ml-2"
-              onClick={(e) => {
+                }}/>
+        <input style={buttonStyle} type="submit" value="Login" onClick={(e) => {
                 onLogin(email, password);
-              }}
-              style={{
-                position: "absolute",
-                top: "200px",
-                left: "80px",
-                width: "100px",
-              }}
-            >
-              Sign In
-            </button>
-            <Link
-              to="/register"
-              className="btn btn-danger ml-2"
-              style={{
-                position: "absolute",
-                top: "200px",
-                left: "200px",
-                width: "200px",
-              }}
-            >
-              Sign Up
-            </Link>
-          </div>
-        </div>
-      </div>
-      <img src="/images/loginimg.jpg" align="right" width="750" height="800" />
+              }}/>
+        <p style={pStyle}>Don't have an account?<Link to="/register" style={linkStyle}>Sign Up</Link></p>
+
+       </div>
+
+      </main>
+
+
+
+
+
+
+
     </>
   );
 }
+
+const mainContainer = {
+  width: "100%",
+  height:"100vh",
+  backgroundColor : "#e2e8f0",
+  
+};
+
+const subContainer = {
+    width: "500px",
+    height: "500px",
+    backgroundColor: "white",
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: "120px",
+    borderRadius: "15px",
+    boxShadow:' rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
+    display: "flex",
+    flexDirection: "column",
+    gap: "30px",
+    alignItems: "center",
+    justifyContent: "center"
+};
+
+const inputStyle = {
+  borderRadius: "12px",
+  border:'none',
+  boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
+  padding: "10px 10px",
+  width: "300px",
+  outline: 'none',
+
+};
+
+const buttonStyle = {
+    color: "white",
+    fontWeight:'600',
+    border: "none",
+    backgroundColor:"#dc2626",
+    boxShadow: 'rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px',
+    padding: '8px 120px',
+    borderRadius: "15px",
+   
+
+};
+
+const pStyle= {
+  fontSize: "14px",
+  color:"#475569"
+  
+};
+
+const linkStyle = {
+  marginLeft: "8px",
+  color:'#dc2626'
+}
+
+
 export default Login;

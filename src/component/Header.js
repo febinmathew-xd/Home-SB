@@ -6,11 +6,14 @@ import { AuthenticationContext } from "./AuthenticationContext";
 function Header() {
 
     const { onLogout } = useContext(AuthenticationContext);
+    const { isAuthenticated } = useContext(AuthenticationContext);
+ 
   return (
     <header style={headerStyle}>
-        <div style={{paddingTop:"80px",height:"100%",width: "100%",paddingRight: "50px",paddingLeft:"50px", display:"flex", alignItems: "center", justifyContent:"space-between"}}>
-        <h1 ><span style={{color:"red"}}>SPORTS</span>  BUDDY</h1>
-        <ul style={{display:"flex",gap:"40px", }}>
+        <div style={{paddingTop:"80px",height:"100%",width: "100%",paddingRight: "80px",paddingLeft:"80px", display:"flex", alignItems: "center", justifyContent:"space-between"}}>
+        <Link style={{color:"black", textDecoration:"none"}} to="/"><h1 ><span style={{color:"red"}}>SPORTS</span>  BUDDY</h1></Link> 
+        {
+            isAuthenticated? (<><ul style={{display:"flex",gap:"40px", }}>
         <li style={navStyle}>
         <Link style={{color:"black"}} to='/' >Home</Link>
         </li>
@@ -36,21 +39,27 @@ function Header() {
         <Link style={{color:"black"}} to="/feedback">Feedback</Link>
         </li>
         <li style={navStyle}>
-            <Link style={{color:"black"}} to="/news">News</Link>
+            <Link style={{color:"black"}} to="/notifications">Notifications</Link>
         </li>
+       
         </ul>
+         <div>
+         <Link style={button} to="/distributor">
+         Distrubutor
+         </Link>
 
-        <div>
-            <Link style={button} to="/distributor">
-            Distrubutor
-            </Link>
+         <a style={button} onClick={() => onLogout()}>
+             Logout
+             
+         </a>
 
-            <a style={button} onClick={() => onLogout()}>
-                Logout
-                
-            </a>
+     </div>
+     </>
+        ):<Link style={button}>
+            Sign Up
+        </Link>
+}
 
-        </div>
         </div>
      
     </header>
@@ -75,12 +84,14 @@ const navStyle = {
 
 const button = {
     color:"white",
-    backgroundColor:"red",
+    backgroundColor:"#dc2626",
     padding:"5px 15px",
     borderRadius: "15px",
     fontSize: "13px",
     marginLeft: "10px",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontWeight:"500",
+    textDecoration : "none"
 }
 
 export default Header
